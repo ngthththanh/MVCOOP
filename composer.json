@@ -1,0 +1,18 @@
+{
+    "name": "asus/mvcoop",
+    "autoload": {
+        "psr-4": {
+            "Asus\\Mvcoop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thanh Thanh",
+            "email": "nguyenthanhthanhgatay@gmail.com"
+        }
+    ],
+    "require": {
+        "eftec/bladeone": "^4.9",
+        "bramus/router": "~1.6"
+    }
+}
