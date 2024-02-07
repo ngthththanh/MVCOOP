@@ -45,6 +45,10 @@
                                         <label class="small mb-1" for="inputName">Name</label>
                                         <input class="form-control" id="inputName" type="text" placeholder="Enter your name" value="{{ $user['name'] }}">
                                     </div>
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="inputName">Name</label>
+                                        <input class="form-control" id="inputName" type="text" placeholder="Enter your name" value="{{ $user['username'] }}">
+                                    </div>
                                     <!-- Form Group (last name)-->
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="inputEmail">Email</label>

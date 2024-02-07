@@ -29,6 +29,7 @@ class UserController extends Controller
      {
           if (!empty($_POST)) {
                $name =  $_POST['name'];
+               $username = $_POST['username'];
                $email = $_POST['email'];
                $password = $_POST['password'];
                $avatar =  $_FILES['avatar'] ?? null;
@@ -41,6 +42,7 @@ class UserController extends Controller
                }
                $this->user->insert(
                     $name,
+                    $username,
                     $email,
                     $password,
                     $avatarPath
@@ -75,6 +77,7 @@ class UserController extends Controller
           if (!empty($_POST)) {
 
                $name =  $_POST['name'];
+               $username = $_POST['username'];
                $email = $_POST['email'];
                $password = $_POST['password'];
                $avatar =  $_FILES['avatar'] ?? null;
@@ -88,6 +91,7 @@ class UserController extends Controller
                $this->user->update(
                     $id,
                     $name,
+                    $username,
                     $email,
                     $password,
                     $avatarPath

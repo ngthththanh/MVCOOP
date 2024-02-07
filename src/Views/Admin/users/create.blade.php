@@ -20,6 +20,11 @@
                             placeholder="Enter name" name="name">
                     </div>
                     <div class="mb-3 mt-3">
+                        <label for="username" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="username" required
+                            placeholder="Enter name" name="username">
+                    </div>
+                    <div class="mb-3 mt-3">
                         <label for="email" class="form-label">Email:</label>
                         <input type="email" class="form-control" id="email" required
                             placeholder="Enter email" name="email">

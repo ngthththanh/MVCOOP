@@ -40,14 +40,15 @@ class User extends Model
         }
     }
 
-    public function insert($name, $email, $password, $avatar = null)
+    public function insert($name, $username, $email, $password, $avatar = null)
     {
         try {
-            $sql = "INSERT INTO users(name, email, password, avatar) 
-                VALUES (:name, :email, :password, :avatar)";
+            $sql = "INSERT INTO users(name, username, email, password, avatar) 
+                VALUES (:name, :username, :email, :password, :avatar)";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':name', $name);
+            $stmt ->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password', $password);
             $stmt->bindParam(':avatar', $avatar);
@@ -59,11 +60,12 @@ class User extends Model
         }
     }
 
-    public function update($id, $name, $email, $password, $avatar = null)
+    public function update($id, $name, $username,$email, $password, $avatar = null)
     {
         try {
             $sql = "UPDATE users 
                 SET name = :name,
+                    username = :username,
                     email = :email,
                     password = :password,
                     avatar = :avatar
@@ -73,6 +75,7 @@ class User extends Model
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':id', $id);
             $stmt->bindParam(':name', $name);
+            $stmt->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password', $password);
             $stmt->bindParam(':avatar', $avatar);

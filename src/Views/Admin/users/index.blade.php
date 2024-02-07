@@ -43,6 +43,7 @@
                         <tr>
                             <td> {{ $user['id'] }} </td>
                             <td> {{ $user['name'] }} </td>
+                            <td> {{ $user['username'] }} </td>
                             <td> {{ $user['email'] }} </td>
                             <td> {{ $user['password'] }} </td>
                             <td> <img src="{{ $user['avatar'] }}"  alt="" width="100px"> </td>
