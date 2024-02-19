@@ -11,6 +11,7 @@ use Asus\Mvcoop\Controllers\Admin\UserController;
 use Asus\Mvcoop\Controllers\Client\HomeController;
 use Asus\Mvcoop\Controllers\Client\PostController as ClientPostController;
 use Asus\Mvcoop\Controllers\Client\SlideController as ClientSlideController;
+use Asus\Mvcoop\Controllers\Client\CategoryController as ClientCategoryController;
 
 // Create Router instance
 $router = new Router();
@@ -19,6 +20,10 @@ $router = new Router();
 $router->get('/', HomeController::class . '@index');
 $router->get('/post/{id}', ClientPostController::class . '@show');
 $router->get('/post/{id}', ClientSlideController::class . '@show');
+$router->mount('/category/{id}', function () use ($router) {
+     $router->get('/', ClientCategoryController::class . '@show'); 
+     $router->get('/post/{id}', ClientPostController::class . '@show');
+});
 
 $router->match('GET|POST', '/auth/login', AuthenticateController::class .'@login');
 $router->mount('/admin', function () use ($router) {

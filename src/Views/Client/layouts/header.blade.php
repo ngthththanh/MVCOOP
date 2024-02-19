@@ -12,18 +12,27 @@
           @endphp
           <nav id="navbar" class="navbar">
               <ul>
-                  <li class="dropdown"><a href="category.html"><span>Categories</span> <i
+                  <li class="dropdown"><a href="/category/"><span>Categories</span> <i
                               class="bi bi-chevron-down dropdown-indicator"></i></a>
                       <ul>
                         @foreach ($categories as $category)
-                        <li><a href="search-result.html">{{ $category['name'] }}</a></li>
-
-                        @endforeach
+                        <li><a href="/category/{{ $category['id'] }}">{{ $category['name'] }}</a></li>
+                    @endforeach
                       </ul>
                   </li>
 
                   <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li class="dropdown"><a href="/auth/login"><span>Đăng nhập</span> <i
+                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+            @if (isset($_SESSION['user']))
+                <ul>
+
+                    <li><a href="/admin/">Vào Admin</a></li>
+
+
+                </ul>
+            @endif
+        </li>
               </ul>
           </nav><!-- .navbar -->
 

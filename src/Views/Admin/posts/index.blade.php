@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <p class="mb-4"><a href="/admin/users/create">Thêm mới</a></p>
+        <p class="mb-4"><a href="/admin/posts/create">Thêm mới</a></p>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -24,6 +24,7 @@
                                 <th>Image</th>
                                 <th>Excerpt</th>
                                 <th>Category</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -33,6 +34,7 @@
                                 <th>Title</th>
                                 <th>Image</th>
                                 <th>Excerpt</th>
+                                <th>Category</th>
                                 <th>Category</th>
                                 <th>Action</th>
                             </tr>
@@ -47,6 +49,7 @@
                                     </td>
                                     <td> {{ $post['p_excerpt'] }} </td>
                                     <td> {{ $post['c_name'] }} </td>
+                                    <td> {{ $post['p_date'] }} </td>
                                     <td>
                                         <a href="/admin/posts/{{ $post['p_id'] }}/update" class="btn btn-warning">Cập
                                             nhật</a>

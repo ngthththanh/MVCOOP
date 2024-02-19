@@ -13,6 +13,7 @@ class Post extends Model{
                     p.id            p_id,
                     p.title         p_title,
                     p.excerpt       p_excerpt,
+                    p.date       p_date,
                     p.image         p_image,
                     p.category_id   p_category_id
                 FROM posts p
@@ -40,6 +41,7 @@ class Post extends Model{
                     p.id            p_id,
                     p.title         p_title,
                     p.excerpt       p_excerpt,
+                    p.date       p_date,
                     p.image         p_image,
                     p.category_id   p_category_id
                 FROM posts p
@@ -67,6 +69,7 @@ class Post extends Model{
                     p.id        p_id,
                     p.title     p_title,
                     p.excerpt   p_excerpt,
+                    p.date   p_date,
                     p.image     p_image
                 FROM posts p
                 INNER JOIN categories c
@@ -94,6 +97,7 @@ class Post extends Model{
                     p.excerpt       p_excerpt,
                     p.image         p_image,
                     p.content         p_content,
+                    p.date         p_date,
                     p.category_id   p_category_id
                 FROM posts p
                 INNER JOIN categories c
@@ -114,17 +118,18 @@ class Post extends Model{
         }
     }
 
-    public function insert($category_id, $title, $excerpt, $content, $image = null)
+    public function insert($category_id, $title, $excerpt, $content, $date, $image = null)
     {
         try {
-            $sql = "INSERT INTO posts(category_id, title, excerpt, content, image) 
-                VALUES (:category_id, :title, :excerpt, :content, :image)";
+            $sql = "INSERT INTO posts(category_id, title, excerpt, content, date, image) 
+                VALUES (:category_id, :title, :excerpt, :content, :date, :image)";
 
             $stmt = $this->conn->prepare($sql);
             $stmt ->bindParam(':category_id', $category_id);
             $stmt ->bindParam(':title', $title);
             $stmt ->bindParam(':excerpt', $excerpt);
             $stmt ->bindParam(':content', $content);
+            $stmt->bindParam(':date', $date);
             $stmt->bindParam(':image', $image);
 
             $stmt->execute();
@@ -134,7 +139,7 @@ class Post extends Model{
         }
     }
 
-    public function update($id, $category_id, $title, $excerpt, $content, $image = null)
+    public function update($id, $category_id, $title, $excerpt, $content, $date, $image = null)
     {
         try {
             $sql = "UPDATE posts 
@@ -142,6 +147,7 @@ class Post extends Model{
                     title = :title,
                     excerpt = :excerpt,
                     content = :content,
+                    date = :date,
                     image = :image
                 WHERE id = :id
             ";
@@ -152,6 +158,7 @@ class Post extends Model{
             $stmt ->bindParam(':title', $title);
             $stmt ->bindParam(':excerpt', $excerpt);
             $stmt ->bindParam(':content', $content);
+            $stmt->bindParam(':date', $date);
             $stmt->bindParam(':image', $image);
             $stmt->execute();
         } catch (\Exception $e) {

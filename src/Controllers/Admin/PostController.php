@@ -38,6 +38,7 @@ class PostController extends Controller
             $title      = $_POST['title'];
             $excerpt    = $_POST['excerpt'];
             $content    = $_POST['content'];
+            $date  = $_POST['date'];
             $image      = $_FILES['image'] ?? null;
             $imagePath  = null;
             if ($image) {
@@ -51,8 +52,9 @@ class PostController extends Controller
             $this->post->insert(
                 $categoryID,
                 $title,
-                $content,
                 $excerpt,
+                $content,
+                $date,
                 $imagePath
             );
 
@@ -94,7 +96,7 @@ class PostController extends Controller
             $title = $_POST['title'];
             $excerpt = $_POST['excerpt'];
             $content = $_POST['content'];
-
+            $date = $_POST['date'];
             $image = $_FILES['image'] ?? null;
             $imagePath = $data['post']['p_image'];
             $move = false;
@@ -112,8 +114,9 @@ class PostController extends Controller
                 $id,
                 $categoryID,
                 $title,
-                $content,
                 $excerpt,
+                $content,
+                $date,
                 $imagePath
             );
 
@@ -125,9 +128,10 @@ class PostController extends Controller
                 unlink(PATH_ROOT . $data['post']['p_image']);
             }
 
-            $_SESSION['success'] = 'Thao tác thành công!';
+            // $_SESSION['success'] = 'Thao tác thành công!';
 
-            header("Location: /admin/posts/$id/update");
+            // header("Location: /admin/posts/$id/update");
+            header("Location: /admin/posts");
             exit();
         }
 

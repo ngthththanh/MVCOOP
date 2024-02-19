@@ -19,7 +19,34 @@ class Category extends Model
                die;
           }
      }
-     public function getAll()
+     public function listCategory($category_id){
+          try{
+              $sql = "
+              SELECT 
+                  c.name          c_name,
+                  p.id            p_id,
+                  p.title         p_title,
+                  p.excerpt       p_excerpt,
+                  p.image         p_image,
+                  p.content       p_content,
+                  p.date     p_date,
+                  p.category_id
+              FROM posts p
+              INNER JOIN categories c    ON p.category_id = c.id  WHERE c.id = :category_id
+          ";
+          $stmt = $this->conn->prepare($sql);
+  
+          $stmt->bindParam(':category_id', $category_id);
+  
+              $stmt->execute();
+              
+              return  $stmt->fetchAll();
+          }catch (\Exception $e) {
+              echo 'ERROR: ' . $e->getMessage();
+              die;
+          }
+      }
+   function getAll()
      {
           try {
                $sql = "SELECT * FROM categories";

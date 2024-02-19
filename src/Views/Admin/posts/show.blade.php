@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <p class="mb-4"><a href="/admin/users">Danh sách</a></p>
+        <p class="mb-4"><a href="/admin/posts">Danh sách</a></p>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">

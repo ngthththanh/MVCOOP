@@ -14,7 +14,7 @@
                     <div class="single-post">
                         <div class="post-meta"><span class="date">{{ $post['c_name'] }}</span> <span
                                 class="mx-1">&bullet;</span>
-                            <span>Jul 5th '22</span>
+                            <span>{{ $post['p_date'] }}</span>
                         </div>
                         <h1 class="mb-5">{{ $post['p_title'] }}</h1>
                         <p>{{ $post['c_excerpt'] }}</p>

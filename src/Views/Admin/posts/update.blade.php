@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <p class="mb-4"><a href="/admin/users">Danh sách</a></p>
+        <p class="mb-4"><a href="/admin/posts">Danh sách</a></p>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -44,6 +44,16 @@
                             <label for="image" class="form-label">Image:</label>
                             <input type="file" class="form-control" id="image" name="image">
                             <img src="{{ $post['p_image'] }}" alt="" width="100px">
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Date:</label>
+                            @php
+                                date_default_timezone_set('Asia/Ho_Chi_Minh'); // Đặt múi giờ mặc định*
+    
+                                $currentDateTime = date('y/m/d H:i');
+                            @endphp
+                            <input type="text" class="form-control" id="date" value="{{ $currentDateTime }}"
+                                name="date">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="/admin/posts" class="btn btn-success">Danh sách Bài viết</a>

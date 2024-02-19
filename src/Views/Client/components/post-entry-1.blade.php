@@ -1,7 +1,7 @@
 <div class="post-entry-1 lg">
     <a href="/post/{{ $post['p_id'] }}"><img src="{{ $post['p_image'] }}" alt="" width="300px" height="400px"></a>
     <div class="post-meta"><span class="date">{{ $post['c_name'] }}</span> <span class="mx-1">&bullet;</span>
-        <span>Jul 5th '22</span>
+        <span>{{ $post['p_date'] }}</span>
     </div>
     <h2><a href="single-post.html">{{ $post['p_title'] }}</a></h2>
     @if (!isset($hiddenExcerpt))
