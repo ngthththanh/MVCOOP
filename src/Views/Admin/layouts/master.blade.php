@@ -29,7 +29,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-          @include('layouts.sidebar')
+          @include('components.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -39,7 +39,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-               @include('layouts.topbar')
+               @include('components.topbar')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->

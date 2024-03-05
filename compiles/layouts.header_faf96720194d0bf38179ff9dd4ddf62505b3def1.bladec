@@ -8,7 +8,7 @@
  <h1>ZenBlog</h1>
  </a>
  <?php 
- $categories = (new \Asus\Mvcoop\Models\Category)->getForMenu();
+ $categories = (new \Asus\Mvcoop\Models\Category())->getForMenu();
  ?>
  <nav id="navbar" class="navbar">
  <ul>

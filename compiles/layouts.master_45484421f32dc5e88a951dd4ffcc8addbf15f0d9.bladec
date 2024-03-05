@@ -29,7 +29,7 @@
  <div id="wrapper">
 
  <!-- Sidebar -->
- <?php echo $this->runChild('layouts.sidebar'); ?>
+ <?php echo $this->runChild('components.sidebar'); ?>
  <!-- End of Sidebar -->
 
  <!-- Content Wrapper -->
@@ -39,7 +39,7 @@
  <div id="content">
 
  <!-- Topbar -->
- <?php echo $this->runChild('layouts.topbar'); ?>
+ <?php echo $this->runChild('components.topbar'); ?>
  <!-- End of Topbar -->
 
  <!-- Begin Page Content -->

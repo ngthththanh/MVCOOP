@@ -8,31 +8,31 @@
               <h1>ZenBlog</h1>
           </a>
           @php
-              $categories = (new \Asus\Mvcoop\Models\Category)->getForMenu();
+              $categories = (new \Asus\Mvcoop\Models\Category())->getForMenu();
           @endphp
           <nav id="navbar" class="navbar">
               <ul>
                   <li class="dropdown"><a href="/category/"><span>Categories</span> <i
                               class="bi bi-chevron-down dropdown-indicator"></i></a>
                       <ul>
-                        @foreach ($categories as $category)
-                        <li><a href="/category/{{ $category['id'] }}">{{ $category['name'] }}</a></li>
-                    @endforeach
+                          @foreach ($categories as $category)
+                              <li><a href="/category/{{ $category['id'] }}">{{ $category['name'] }}</a></li>
+                          @endforeach
                       </ul>
                   </li>
 
                   <li><a href="about.html">About</a></li>
                   <li class="dropdown"><a href="/auth/login"><span>Đăng nhập</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
-            @if (isset($_SESSION['user']))
-                <ul>
+                              class="bi bi-chevron-down dropdown-indicator"></i></a>
+                      @if (isset($_SESSION['user']))
+                          <ul>
 
-                    <li><a href="/admin/">Vào Admin</a></li>
+                              <li><a href="/admin/">Vào Admin</a></li>
 
 
-                </ul>
-            @endif
-        </li>
+                          </ul>
+                      @endif
+                  </li>
               </ul>
           </nav><!-- .navbar -->
 

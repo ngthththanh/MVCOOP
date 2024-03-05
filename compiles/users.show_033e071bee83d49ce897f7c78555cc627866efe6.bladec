@@ -46,7 +46,7 @@
  <input class="form-control" id="inputName" type="text" placeholder="Enter your name" value="<?php echo \htmlentities($user['name']??'', ENT_QUOTES, 'UTF-8', false); ?>">
  </div>
  <div class="col-md-6">
- <label class="small mb-1" for="inputName">Username</label>
+ <label class="small mb-1" for="inputName">Name</label>
  <input class="form-control" id="inputName" type="text" placeholder="Enter your name" value="<?php echo \htmlentities($user['username']??'', ENT_QUOTES, 'UTF-8', false); ?>">
  </div>
  <!-- Form Group (last name)-->

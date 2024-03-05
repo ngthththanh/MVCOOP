@@ -20,9 +20,11 @@ $router = new Router();
 $router->get('/', HomeController::class . '@index');
 $router->get('/post/{id}', ClientPostController::class . '@show');
 $router->get('/post/{id}', ClientSlideController::class . '@show');
+
+// $router->get('/post/{id}', ClientPostController::class . '@show');
 $router->mount('/category/{id}', function () use ($router) {
      $router->get('/', ClientCategoryController::class . '@show'); 
-     $router->get('/post/{id}', ClientPostController::class . '@show');
+    
 });
 
 $router->match('GET|POST', '/auth/login', AuthenticateController::class .'@login');
